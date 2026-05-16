@@ -6,16 +6,9 @@ Minimal reproduction for a `react-hooks/exhaustive-deps` false positive in rslin
 object shorthand property:
 
 ```tsx
-const isAdmin = useAuthStore((state) => state.isAdmin);
+const isAdmin = true;
 
-const roles = useMemo(
-  () =>
-    getEffectiveRoles({
-      teacherType: user?.teacherType,
-      isAdmin,
-    }),
-  [user?.teacherType, isAdmin],
-);
+const value = useMemo(() => ({ isAdmin }), [isAdmin]);
 ```
 
 `isAdmin` is a real dependency. ESLint's official `eslint-plugin-react-hooks`
