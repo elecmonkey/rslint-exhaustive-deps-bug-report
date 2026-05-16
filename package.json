@@ -1,0 +1,23 @@
+{
+  "name": "rslint-exhaustive-deps-bug-report",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "lint": "pnpm run lint:eslint && pnpm run lint:rslint",
+    "lint:eslint": "eslint src/App.tsx",
+    "lint:rslint": "rslint src/App.tsx"
+  },
+  "dependencies": {
+    "react": "19.2.6"
+  },
+  "devDependencies": {
+    "@eslint/js": "10.0.1",
+    "@rslint/core": "0.5.3",
+    "@types/react": "19.2.14",
+    "eslint": "10.4.0",
+    "eslint-plugin-react-hooks": "7.1.1",
+    "typescript": "6.0.3",
+    "typescript-eslint": "8.59.3"
+  }
+}
